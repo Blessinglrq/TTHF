@@ -4,7 +4,7 @@ Rongqin Liang, Yuanman Li, Jiantao Zhou, and Xia Li
 
 Our STGlow network architecture:
 
-<img src="figures/STGlow.png" width="1000">
+<img src="TTHF.png" width="1000">
 
 ## Installation
 ### Dependencies
