@@ -15,6 +15,15 @@ Our TTHF framwork:
  - RTX 3090
  - Please refer to the "requirements.txt" file for more details.
 
+## Preparing
+First, prepare the data for training or testing by:
+
+```
+cd TTHF/datasets
+python extract_samples.sh
+```
+Note that you need to modify the corresponding path.
+
 ## Training
 Users can train the STGlow models on ETH/UCY or SDD dataset easily by runing the following command:
 
