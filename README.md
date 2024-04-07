@@ -1,15 +1,15 @@
 # TTHF
-The code of [Text-Driven Traffic Anomaly Detection with Temporal High-Frequency Modeling in Driving Videos]
+The code of Text-Driven Traffic Anomaly Detection with Temporal High-Frequency Modeling in Driving Videos
 Rongqin Liang, Yuanman Li, Jiantao Zhou, and Xia Li
 
-Our STGlow network architecture:
+Our TTHF framwork:
 
 <img src="TTHF.png" width="1000">
 
 ## Installation
 ### Dependencies
  - Python 3.8
- - pytorch 1.11.0
+ - pytorch 2.0.1
  - cuda 11.3
  - Ubuntu 20.04
  - RTX 3090
