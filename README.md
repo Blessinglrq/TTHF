@@ -20,47 +20,92 @@ First, prepare the data for training or testing by:
 
 ```
 cd TTHF/datasets
-python extract_samples.sh
+python ./extract_samples.sh
 ```
 Note that you need to modify the corresponding path.
 
 ## Training
-Users can train the STGlow models on ETH/UCY or SDD dataset easily by runing the following command:
+Users can train the TTHF models on DoTA dataset easily by runing the following command:
 
-For ETH/UCY:
 ```
-python tools/train_for_eth_ucy.py 
+cd TTHF
+python3 ./main.py \
+        --train \
+        --lr_clip 5e-6 \
+        --wd 1e-4 \
+        --epochs 15 \
+        --batch_size 128 \
+        --dataset DoTA \
+        --gpu_num 0 \
+        --height 224 \
+        --width 224 \
+        --normal_class 1 \
+        --eval_every 1000 \
+        --base_model 'RN50' \
+        --general \
+        --fg \
+        --hf \
+        --aafm \
+        --other_method 'TDAFF_BASE' \
+        --exp_name 'TDAFF_BASE_RN50'
 ```
-
-For SDD:
-```
-python tools/train_for_sdd.py 
-```
+Note that you need to modify the corresponding path.
 
 ## Inference 
-Users can test the STGlow models on ETH/UCY or SDD dataset easily by runing the following command:
+Users can test the [TTHF models](https://www.alipan.com/s/5xfCZS1kCCc) (Extraction code: 65fv) on DoTA or DADA-2000 dataset easily by runing the following command:
 
-For ETH/UCY:
+For DoTA:
 ```
-python tools/test_for_eth_ucy.py 
+python3 ./main.py \
+        --evaluate \
+        --batch_size 128 \
+        --dataset DoTA \
+        --gpu_num 0 \
+        --height 224 \
+        --width 224 \
+        --normal_class 1 \
+        --eval_every 1000 \
+        --base_model 'RN50' \
+        --general \
+        --fg \
+        --hf \
+        --aafm \
+        --other_method 'TDAFF_BASE' \
+        --exp_name 'TDAFF_BASE_RN50'
 ```
 
-For SDD:
+For DADA-2000:
 ```
-python tools/test_for_sdd.py 
+python3 ./main.py \
+        --evaluate \
+        --batch_size 128 \
+        --dataset DADA \
+        --gpu_num 0 \
+        --height 224 \
+        --width 224 \
+        --normal_class 1 \
+        --eval_every 1000 \
+        --base_model 'RN50' \
+        --general \
+        --fg \
+        --hf \
+        --aafm \
+        --other_method 'TDAFF_BASE' \
+        --exp_name 'TDAFF_BASE_RN50'
 ```
+User can also see "tdaff_base_script.sh" for more training and testing commands.
 
-Note that our project is developed based on the [code](https://github.com/umautobots/bidireaction-trajectory-prediction) of [BiTraP: Bi-directional Pedestrian Trajectory Prediction with Multi-modal Goal Estimation](https://arxiv.org/abs/2007.14558).
+Note that our project is developed based on the [code](https://github.com/openai/CLIP) of [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020). The relevant pre-trained models can be downloaded from the official website.
 
 ## Citation
 
 If you found the repo is useful, please feel free to cite our papers:
 ```
-@article{liang2022stglow,
-      title={STGlow: A Flow-based Generative Framework with Dual Graphormer for Pedestrian Trajectory Prediction}, 
-      author={Rongqin Liang and Yuanman Li and Jiantao Zhou and Xia Li},
-      journal={arXiv preprint arXiv:2211.11220}
-      year={2022}
+@article{liang2024textdriven,
+    title={Text-Driven Traffic Anomaly Detection with Temporal High-Frequency Modeling in Driving Videos},
+    author={Rongqin Liang and Yuanman Li and Jiantao Zhou and Xia Li},
+    journal={arXiv preprint arXiv:2401.03522}
+    year={2024}
 }
 
 ```
