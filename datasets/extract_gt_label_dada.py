@@ -53,7 +53,7 @@ def load_DADA(test_file, label_path, mode):
         video_lengths[video] = len(label_list)
         labels[video] = label_list
         with open(video_list, 'a+') as f:
-            f.write(video_name)
+            f.write(video)
             f.write('\n')
     return labels
 
