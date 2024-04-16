@@ -85,11 +85,6 @@ class DoTADatasetSubMPM(data.Dataset):
             one_hot_label_M = torch.tensor(one_hot_label_text_M[1])
             one_hot_label_text_S = self.one_hot_label_S[divided_file_[-3]][int(divided_file_[-1].split('.')[0])]
             one_hot_label_S = torch.tensor(one_hot_label_text_S[1])
-            rgb_p = rgb_p.resize((self.width*2, self.height*2), 2)
-            rgb_c = rgb_c.resize((self.width*2, self.height*2), 2)
-        else:
-            rgb_p = rgb_p.resize((self.width, self.height), 2)
-            rgb_c = rgb_c.resize((self.width, self.height), 2)
 
         rgb_p = rgb_p.resize((self.width, self.height), 2)
         rgb_c = rgb_c.resize((self.width, self.height), 2)
@@ -164,9 +159,6 @@ class DADADatasetSubMPM(data.Dataset):
         text = False
         if self.train is True:
             raise NotImplementedError
-        else:
-            rgb_p = rgb_p.resize((self.width, self.height), 2)
-            rgb_c = rgb_c.resize((self.width, self.height), 2)
 
         rgb_p = rgb_p.resize((self.width, self.height), 2)
         rgb_c = rgb_c.resize((self.width, self.height), 2)
