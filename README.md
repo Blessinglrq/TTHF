@@ -1,5 +1,5 @@
 # TTHF
-The code of Text-Driven Traffic Anomaly Detection with Temporal High-Frequency Modeling in Driving Videos
+The code of [Text-Driven Traffic Anomaly Detection with Temporal High-Frequency Modeling in Driving Videos](https://ieeexplore.ieee.org/document/10504300)
 Rongqin Liang, Yuanman Li, Jiantao Zhou, and Xia Li
 
 Our TTHF framwork:
@@ -101,11 +101,12 @@ Note that our project is developed based on the [code](https://github.com/openai
 
 If you found the repo is useful, please feel free to cite our papers:
 ```
-@article{liang2024textdriven,
+@article{10504300,
     title={Text-Driven Traffic Anomaly Detection with Temporal High-Frequency Modeling in Driving Videos},
     author={Rongqin Liang and Yuanman Li and Jiantao Zhou and Xia Li},
-    journal={arXiv preprint arXiv:2401.03522}
-    year={2024}
+    journal={IEEE Transactions on Circuits and Systems for Video Technology},
+    year={2024},
+    doi={10.1109/TCSVT.2024.3390173}
 }
 
 ```
